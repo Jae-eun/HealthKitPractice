@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>HealthKit Capabilities</key>
+	<string>&quot;건강 정보 제공을 허가해주세요&quot;</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>HKWorkoutTypeIdentifier, HKQuantityTypeIdentifierStepCount</string>
 </dict>
 </plist>
