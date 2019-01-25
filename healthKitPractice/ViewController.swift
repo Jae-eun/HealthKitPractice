@@ -18,7 +18,6 @@ class ViewController: UIViewController {
   
   let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
   let distanceType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-  let woType = HKObjectType.workoutType()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
     print("Collecting workouts between \(startDate) and \(endDate)")
     
     let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictEndDate)
-    
+ 
     let query = HKStatisticsQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (_, result, error) in
       var resultCount = 0
       guard let result = result else {
@@ -69,8 +68,8 @@ class ViewController: UIViewController {
       var distance = ""
       
       if resultCount2 < 1000 {
-        distance = "\(resultCount2.description) + m"
-      }else{
+        distance = "\(resultCount2) + m"
+      } else {
         let distanceInKilometer = resultCount2 / 1000
         distance = String(format:"%.1f", distanceInKilometer) + " km"
       }
